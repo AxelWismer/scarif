@@ -8,6 +8,7 @@ from .models import User, Role
 
 # Register your models here.
 class UserAdmin(DjangoUserAdmin):
+    ordering = ["email"]
     list_display = ['email', 'first_name', 'last_name']
     list_filter = tuple()
     fieldsets = (

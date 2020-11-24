@@ -22,7 +22,10 @@ class Role(models.Model):
       return self.get_id_display()
 
 class User(AbstractUser):
+    class Meta:
+        ordering = ["email"]
 
+    username = None
     role = models.ManyToManyField('Role')
     email = models.EmailField(_("email address"), unique=True)
     birth_date = models.DateField(_("birth date"), null=True, blank=True)

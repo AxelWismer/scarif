@@ -1,0 +1,41 @@
+{% load i18n crispy_forms_tags crispy_forms_field %}
+<div class="actions col-auto mt-3">
+    {% block actions %}
+      {% block actions-form %}
+      <div class="form-row">
+        {% for field in action_form %}
+            <div class="col{% if field.is_hidden %}-0{% endif %}">
+                {% crispy_field field 'class' 'w-100' %}
+            </div>
+        {% endfor %}
+        {% block actions-submit %}
+          <div class="col-auto">
+            <button class="btn btn-outline-secondary" type="submit" title="{% trans 'Run the selected action' %}" name="index"  value="{{ action_index|default:0 }}">{% trans "Go" %}</button>
+          </div>
+        {% endblock %}
+      </div>
+      {% endblock %}
+      <div class="row align-items-center">
+        {% block actions-counter %}
+        {% if actions_selection_counter %}
+          <div class="col-12">
+              <span class="action-counter small" data-actions-icnt="{{ cl.result_list|length }}">{{ selection_note }}</span>
+          </div>
+          {% if cl.result_count != cl.result_list|length %}
+          <div class="col-12">
+              <span class="all" style="display:none"><small>{{ selection_note_all }}</small></span>
+          </div>
+          <div class="col-12">
+              <span class="question small" style="display:none">
+                  <a class="text-decoration-none" href="#" title="{% trans 'Click here to select the objects across all pages' %}">{% blocktrans with cl.result_count as total_count %}Select all {{ total_count }} {{ module_name }}{% endblocktrans %}</a>
+              </span>
+          </div>
+          <div class="col-12">
+              <span class="clear small" style="display:none"><a class="text-decoration-none" href="#">{% trans "Clear selection" %}</a></span>
+          </div>
+          {% endif %}
+        {% endif %}
+        {% endblock %}
+    </div>
+  {% endblock %}
+</div>

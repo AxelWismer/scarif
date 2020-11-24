@@ -1,0 +1,66 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static crispy_forms_field %}
+
+{% block extrastyle %}{{ block.super }}
+<link href="{% static '/css/login.css' %}" rel="stylesheet">
+{{ form.media }}
+{% endblock %}
+
+{% block sidebar_container %}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row h-100 align-items-center">
+    <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+      <div class="shadow-lg borderless-card card-signin my-5">
+        <div class="card-body">
+          <h4 class="card-title text-center">Iniciar sesion</h4>
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <span class="text-danger small">
+              {{ error }}
+            </span>
+            {% endfor %}
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <span class="text-danger">
+              {% blocktrans trimmed %}
+              You are authenticated as {{ username }}, but are not authorized to
+              access this page. Would you like to login to a different account?
+              {% endblocktrans %}
+            </span>
+            {% endif %}
+            <form class="form-signin" action="{{ app_path }}" method="post", id="login-form">
+              {% csrf_token %}
+              <div class="form-label-group form-row mb-3">
+                {% crispy_field form.username 'placeholder' form.username.label %}
+                <label class="required" for="{{form.username.id}}">{{form.username.label}}</label>
+                <div class="invalid-feedback">
+                  {{ form.username.errors }}
+                </div>
+              </div>
+              <div class="form-label-group form-row mb-3">
+                {% crispy_field form.password 'placeholder' form.password.label %}
+                <label class="required" for="{{form.password.id}}">{{form.password.label}}</label>
+                <div class="invalid-feedback">
+                  {{ form.password.errors }}
+                </div>
+                <input type="hidden" name="next" value="{{ next }}">
+              </div>
+              {% block extra_login_fields %}
+              {% endblock %}
+              <div class="row">
+                <div class="col text-left">
+                  <button type="submit" class="btn btn-primary mt-4">{% trans 'Sign in' %}</button>
+                </div>
+              </div>
+            </form>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block sidebar %}
+{% if not app_list %}
+<span class="list-group-item list-group-item-action sidebar-item text-muted">{% trans 'You don’t have permission to view or edit anything' %}</span>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+  <h4>Dashboard</h4>
+  <div class="row">
+    <div id="test">
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{super}}
+
+<script type="text/javascript">
+</script>
+{% endblock %}

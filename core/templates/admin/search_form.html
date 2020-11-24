@@ -1,0 +1,30 @@
+{% load i18n static %}
+{% if cl.search_fields %}
+<h2>{% trans "Search" %}</h2>
+<div class="card shadow mb-4">
+    <div class="card-body" id="toolbar">
+      <form id="changelist-search" method="get" autocomplete="off">
+        <div class="container-fluid px-0">
+          <input class="form-control" type="text" size="40" name="{{ search_var }}" value="{{ cl.query }}" id="searchbar">
+          <div class="row">
+            <div class="col-12">
+              <button type="submit" class="btn btn-outline-primary-dark float-right mt-2" value="{% trans 'Search' %}"><i class="fas fa-search"></i></button>
+            </div>
+          </div>
+          <div class="row mt-2">
+            {% if show_result_count %}
+            <div class="col-12">
+              <span class="small quiet">{% blocktrans count counter=cl.result_count %}{{ counter }} result{% plural %}{{ counter }} results{% endblocktrans %} (<a href="?{% if cl.is_popup %}_popup=1{% endif %}">{% if cl.show_full_result_count %}{% blocktrans with full_result_count=cl.full_result_count %}{{ full_result_count }} total{% endblocktrans %}{% else %}{% trans "Show all" %}{% endif %}</a>)</span>
+            </div>
+            {% endif %}
+            <div class="col-6">
+              {% for pair in cl.params.items %}
+              {% if pair.0 != search_var %}<input type="hidden" name="{{ pair.0 }}" value="{{ pair.1 }}">{% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+{% endif %}

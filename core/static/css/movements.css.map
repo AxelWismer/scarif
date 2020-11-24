@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW;EACT,aAAa,EAAE,kBAAkB",
+"sources": ["../scss/movements.scss"],
+"names": [],
+"file": "movements.css"
+}

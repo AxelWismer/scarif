@@ -1,0 +1,81 @@
+section {
+  min-height: 100%;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+td[class^="field-"],
+th[class^="field-"],
+.admin-object-th {
+  font-size: .85rem;
+}
+
+.sidebar-item {
+    font-size: .85rem;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#wrapper {
+  height: 100%
+}
+
+@import "admin-bootstrap-overrides";
+@import "sidebar.scss";
+
+.form-label-group > input{
+    @extend .form-control
+}
+
+.borderless-card {
+  @extend .card;
+  border: 0 solid $card-border-color;
+}
+
+td[class^="field-"] a, th[class^="field-"] a {
+    color: $primary !important;
+}
+
+@media (min-width: 768px){
+  .text-color-responsive {
+    color: $custom-gray !important;
+  }
+}
+
+@media (max-width: 768px){
+  .text-color-responsive {
+    color: $white !important;
+  }
+}
+
+.readonlypasswordhashwidget{
+  @extend .overflow-auto;
+}
+
+#change-history {
+  @extend .table;
+  @extend .table-borderless;
+  @extend .table-hover;
+}
+
+.module, .delete-confirmation {
+  @extend .container;
+  @extend .mt-4;
+}
+
+.delete-confirmation input {
+  @extend .btn;
+  @extend .btn-primary;
+}
+
+.errorlist {
+  color: $danger;
+  margin-bottom: 0px;
+  @extend .list-unstyled;
+  @extend .small;
+}

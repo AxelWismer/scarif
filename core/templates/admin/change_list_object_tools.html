@@ -1,0 +1,10 @@
+{% load i18n admin_urls %}
+
+{% block object-tools-items %}
+  {% if has_add_permission %}
+    {% url cl.opts|admin_urlname:'add' as add_url %}
+    <div class="col-auto">
+        <a class="btn btn-outline-secondary btn-sm addlink" href="{{add_url}}"><i class="fa fa-plus"></i> Nuevo</a>
+    </div>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="_003-whatsapp"
+   data-name="003-whatsapp"
+   width="36.613"
+   height="36.613"
+   viewBox="0 0 36.613 36.613"
+   version="1.1"
+   sodipodi:docname="003-whatsapp.svg"
+   inkscape:export-filename="/home/toledo/Sistemas/inwash/core/static/img/email/wp_icon.png"
+   inkscape:export-xdpi="167.80467"
+   inkscape:export-ydpi="167.80467"
+   inkscape:version="1.0.1 (1.0.1+r73)">
+  <metadata
+     id="metadata9">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs7" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="740"
+     id="namedview5"
+     showgrid="false"
+     inkscape:zoom="16.196433"
+     inkscape:cx="18.306499"
+     inkscape:cy="18.306499"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="_003-whatsapp" />
+  <path
+     id="Trazado_275"
+     data-name="Trazado 275"
+     d="M18.307,0A18.307,18.307,0,1,0,36.613,18.307,18.309,18.309,0,0,0,18.307,0Zm.388,28.965h0a10.953,10.953,0,0,1-5.236-1.333L7.646,29.155,9.2,23.479a10.957,10.957,0,1,1,9.494,5.486Zm0,0"
+     fill="#727272" />
+  <path
+     id="Trazado_276"
+     data-name="Trazado 276"
+     d="M143.182,124.469a9.108,9.108,0,0,0-7.718,13.948l.216.344-.92,3.36,3.447-.9.333.2a9.092,9.092,0,0,0,4.635,1.269h0a9.107,9.107,0,0,0,0-18.214Zm5.357,13.017a2.821,2.821,0,0,1-1.848,1.3,3.757,3.757,0,0,1-1.724-.108,15.81,15.81,0,0,1-1.561-.577,12.2,12.2,0,0,1-4.677-4.132,5.323,5.323,0,0,1-1.118-2.831,3.069,3.069,0,0,1,.958-2.283,1.006,1.006,0,0,1,.73-.342c.182,0,.365,0,.525.01s.394-.064.616.47.776,1.9.844,2.032a.5.5,0,0,1,.023.48,7.8,7.8,0,0,1-.684.936c-.122.151-.28.285-.12.559a8.253,8.253,0,0,0,1.523,1.9,7.484,7.484,0,0,0,2.2,1.358c.273.137.433.114.593-.068s.684-.8.867-1.073.365-.228.616-.137,1.6.753,1.871.89.456.206.525.32a2.283,2.283,0,0,1-.159,1.3Zm0,0"
+     transform="translate(-124.484 -115.568)"
+     fill="#727272" />
+</svg>

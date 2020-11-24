@@ -1,0 +1,83 @@
+/*!
+ * Bootstrap v4.4.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+$custom-blue:          #4172a1 !default;
+$custom-blue-light:    #579bc9 !default;
+$white:                #FFFFFF !default;
+$custom-green:         #6fac55 !default;
+$custom-yellow:        #ebbc38 !default;
+$custom-red:           #952226 !default;
+$custom-gray:          #667070 !default;
+
+$primary-text-color:   #FFFFFF !default;
+
+$primary:       $custom-blue !default;
+$secondary:     $custom-blue-light !default;
+$success:       $custom-green !default;
+$warning:       $custom-yellow !default;
+$danger:        $custom-red !default;
+
+$body-color:    $custom-gray !default;
+
+$font-size-base:       1rem !default;
+$font-family-base:     'Open Sans', sans-serif !default;
+$headings-font-family: 'Roboto', sans-serif !default;
+
+
+// Navbar
+$navbar-light-toggler-border-color:  rgba($white, 0) !default;
+
+$navbar-light-color:                rgba(#F3F3F3, 1) !default;
+$navbar-light-hover-color:          rgba(#F3F3F3, .8) !default;
+$navbar-light-active-color:         rgba(#F3F3F3, .8) !default;
+$navbar-light-disabled-color:       rgba(#F3F3F3, .4) !default;
+$list-group-action-color:           rgba(#F3F3F3, 1) !default;
+
+// Forms
+// Modified _forms.scss from border to border-bottom (line 19)
+
+$theme-colors: (
+  "custom-gray":         $custom-gray,
+);
+
+@import "../bootstrap/scss/functions";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/root";
+@import "../bootstrap/scss/reboot";
+@import "../bootstrap/scss/type";
+@import "../bootstrap/scss/images";
+@import "../bootstrap/scss/code";
+@import "../bootstrap/scss/grid";
+@import "../bootstrap/scss/tables";
+@import "../bootstrap/scss/forms";
+@import "../bootstrap/scss/buttons";
+@import "../bootstrap/scss/transitions";
+@import "../bootstrap/scss/dropdown";
+@import "../bootstrap/scss/button-group";
+@import "../bootstrap/scss/input-group";
+@import "../bootstrap/scss/custom-forms";
+@import "../bootstrap/scss/nav";
+@import "../bootstrap/scss/navbar";
+@import "../bootstrap/scss/card";
+@import "../bootstrap/scss/breadcrumb";
+@import "../bootstrap/scss/pagination";
+@import "../bootstrap/scss/badge";
+@import "../bootstrap/scss/jumbotron";
+@import "../bootstrap/scss/alert";
+@import "../bootstrap/scss/progress";
+@import "../bootstrap/scss/media";
+@import "../bootstrap/scss/list-group";
+@import "../bootstrap/scss/close";
+@import "../bootstrap/scss/toasts";
+@import "../bootstrap/scss/modal";
+@import "../bootstrap/scss/tooltip";
+@import "../bootstrap/scss/popover";
+@import "../bootstrap/scss/carousel";
+@import "../bootstrap/scss/spinners";
+@import "../bootstrap/scss/utilities";
+@import "../bootstrap/scss/print";

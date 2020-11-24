@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="_011-instagram"
+   data-name="011-instagram"
+   width="36.613"
+   height="36.613"
+   viewBox="0 0 36.613 36.613"
+   version="1.1"
+   sodipodi:docname="011-instagram.svg"
+   inkscape:export-filename="/home/toledo/Sistemas/inwash/core/static/img/email/011-instagram.png"
+   inkscape:export-xdpi="167"
+   inkscape:export-ydpi="167"
+   inkscape:version="1.0.1 (1.0.1+r73)">
+  <metadata
+     id="metadata10">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="740"
+     id="namedview6"
+     showgrid="false"
+     inkscape:zoom="17.36"
+     inkscape:cx="21.874302"
+     inkscape:cy="25.318729"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="_011-instagram" />
+  <path
+     id="Trazado_277"
+     data-name="Trazado 277"
+     d="M214.008,210.5a3.5,3.5,0,1,1-3.5-3.5A3.5,3.5,0,0,1,214.008,210.5Zm0,0"
+     transform="translate(-192.197 -192.197)"
+     fill="#727272" />
+  <path
+     id="Trazado_278"
+     data-name="Trazado 278"
+     d="M152.3,137.907a3.481,3.481,0,0,0-2-1.995,5.816,5.816,0,0,0-1.952-.362c-1.109-.051-1.441-.061-4.248-.061s-3.139.011-4.248.061a5.82,5.82,0,0,0-1.952.362,3.483,3.483,0,0,0-2,1.995,5.819,5.819,0,0,0-.362,1.952c-.051,1.108-.061,1.441-.061,4.248s.011,3.139.061,4.248a5.816,5.816,0,0,0,.362,1.952,3.481,3.481,0,0,0,2,2,5.808,5.808,0,0,0,1.952.362c1.108.051,1.441.061,4.248.061s3.14-.011,4.248-.061a5.808,5.808,0,0,0,1.952-.362,3.481,3.481,0,0,0,2-2,5.822,5.822,0,0,0,.362-1.952c.051-1.109.061-1.441.061-4.248s-.011-3.139-.061-4.248A5.809,5.809,0,0,0,152.3,137.907ZM144.1,149.5a5.4,5.4,0,1,1,5.4-5.4A5.4,5.4,0,0,1,144.1,149.5Zm5.611-9.748a1.261,1.261,0,1,1,1.261-1.261A1.262,1.262,0,0,1,149.714,139.757Zm0,0"
+     transform="translate(-125.796 -125.8)"
+     fill="#727272" />
+  <path
+     id="Trazado_279"
+     data-name="Trazado 279"
+     d="M18.307,0A18.307,18.307,0,1,0,36.613,18.307,18.309,18.309,0,0,0,18.307,0ZM28.755,22.64a7.712,7.712,0,0,1-.489,2.552,5.375,5.375,0,0,1-3.074,3.074,7.718,7.718,0,0,1-2.551.489c-1.121.051-1.479.063-4.334.063s-3.213-.012-4.334-.063a7.718,7.718,0,0,1-2.551-.489,5.375,5.375,0,0,1-3.074-3.074,7.711,7.711,0,0,1-.489-2.551c-.052-1.121-.064-1.479-.064-4.334s.012-3.213.063-4.334a7.713,7.713,0,0,1,.488-2.552,5.379,5.379,0,0,1,3.075-3.074,7.72,7.72,0,0,1,2.552-.489c1.121-.051,1.479-.063,4.334-.063s3.213.012,4.334.064a7.721,7.721,0,0,1,2.552.488,5.376,5.376,0,0,1,3.074,3.075,7.712,7.712,0,0,1,.489,2.552c.051,1.121.063,1.479.063,4.334S28.806,21.519,28.755,22.64Zm0,0"
+     fill="#727272" />
+</svg>

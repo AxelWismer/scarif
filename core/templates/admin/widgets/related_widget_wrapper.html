@@ -1,0 +1,31 @@
+{% load i18n static %}
+<div class="related-widget-wrapper">
+    {{ rendered_widget }}
+    {% block links %}
+        {% spaceless %}
+        {% if not is_hidden %}
+        {% if can_change_related %}
+        <a class="related-widget-wrapper-link change-related mx-1" id="change_id_{{ name }}"
+            data-href-template="{{ change_related_template_url }}?{{ url_params }}"
+            title="{% blocktrans %}Change selected {{ model }}{% endblocktrans %}">
+            <i class="fas fa-edit fa-xs"></i>
+        </a>
+        {% endif %}
+        {% if can_add_related %}
+        <a class="related-widget-wrapper-link add-related mx-1" id="add_id_{{ name }}"
+            href="{{ add_related_url }}?{{ url_params }}"
+            title="{% blocktrans %}Add another {{ model }}{% endblocktrans %}">
+            <i class="fas fa-plus fa-xs"></i>
+        </a>
+        {% endif %}
+        {% if can_delete_related %}
+        <a class="related-widget-wrapper-link delete-related mx-1" id="delete_id_{{ name }}"
+            data-href-template="{{ delete_related_template_url }}?{{ url_params }}"
+            title="{% blocktrans %}Delete selected {{ model }}{% endblocktrans %}">
+            <i class="fas fa-trash fa-xs "></i>
+        </a>
+        {% endif %}
+        {% endif %}
+        {% endspaceless %}
+    {% endblock %}
+</div>

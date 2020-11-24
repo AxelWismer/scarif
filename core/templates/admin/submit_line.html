@@ -1,0 +1,36 @@
+{% load i18n admin_urls %}
+<div class="submit-row row justify-content-end mt-5">
+  {% block submit-row %}
+    {% if show_close %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+        <a href="{% url opts|admin_urlname:'changelist' %}" class="closelink btn btn-outline-primary">{% trans 'Close' %}</a>
+    </div>
+    {% endif %}
+    {% if show_delete_link and original %}
+    {% url opts|admin_urlname:'delete' original.pk|admin_urlquote as delete_url %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+      <a href="{% add_preserved_filters delete_url %}" class="deletelink btn btn-outline-danger">{% trans "Delete" %}</a>
+    </div>
+    {% endif %}
+    {% if show_save_as_new %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+        <input class="btn btn-outline-secondary" type="submit" value="{% trans 'Save as new' %}" name="_saveasnew">
+    </div>
+    {% endif %}
+    {% if show_save_and_add_another and not hide_save_and_add_another %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+        <input class="btn btn-outline-secondary" type="submit" value="{% trans 'Save and add another' %}" name="_addanother">
+    </div>
+    {% endif %}
+    {% if show_save_and_continue %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+        <input class="btn btn-outline-secondary" type="submit" value="{% if can_change %}{% trans 'Save and continue editing' %}{% else %}{% trans 'Save and view' %}{% endif %}" name="_continue">
+    </div>
+    {% endif %}
+    {% if show_save %}
+    <div class="col-12 col-md-auto text-right px-1 my-2">
+        <input type="submit" value="{% trans 'Save' %}" class="btn btn-primary default" name="_save">
+    </div>
+    {% endif %}
+  {% endblock %}
+</div>

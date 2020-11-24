@@ -1,0 +1,39 @@
+{% load crispy_forms_tags crispy_forms_field %}
+<style media="screen">
+  .invalid-feedback {
+    display: block !important
+  }
+</style>
+
+<div class="{{fieldset.classes}}">
+
+{% if fieldset.name or fieldset.description %}
+<div class="row">
+    <div class="col">
+        {% if fieldset.name %}<h4>{{ fieldset.name }}</h4>{% endif %}
+        {% if fieldset.description %}
+        <span class="description text-muted">{{ fieldset.description|safe }}</span>
+        {% endif %}
+    </div>
+</div>
+<div class="border-top border-primary rounded-pill mb-3"></div>
+{% else %}
+<div class="border-top border-primary-dark rounded-pill my-3"></div>
+{% endif %}
+{% for line in fieldset %}
+<div class="form-row mb-3">
+    {% for field in line %}
+    <div class="form-group col{% if field.field.is_hidden %} hidden{% endif %}">
+      {% if field.is_readonly %}
+          {{field.label_tag}}
+          <div class="text-muted mb-3">{{ field.contents }}</div>
+      {% else %}
+        {% with input_type=field.field.field.widget.input_type %}
+          {{ field.field|as_crispy_field }}
+        {% endwith %}
+      {% endif %}
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
+</div>

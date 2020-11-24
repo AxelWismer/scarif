@@ -1,0 +1,143 @@
+{% load i18n static custom_admin_list %}<!DOCTYPE html>
+{% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
+<html lang="{{LANGUAGE_CODE|default:'en-us'}}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
+    <head>
+      <!-- <title>{% block title %}{% endblock %}</title> -->
+        <title>Scarif</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link href="{% static '/css/admin_site.css' %}" rel="stylesheet">
+        <link href="{% static '/css/admin_site.css.map' %}" rel="stylesheet">
+
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        {% block extrastyle %}{% endblock %}
+        {% if LANGUAGE_BIDI %}<link rel="stylesheet" type="text/css" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
+        {% block extrahead %}{% endblock %}
+
+    </head>
+    {% load i18n %}
+
+    <body data-admin-utc-offset="{% now "Z" %}">
+        <div class="wrapper">
+          {% block sidebar_container %}
+            {% if not is_popup %}
+            <!-- Sidebar -->
+            <nav id="sidebar" class="bg-primary shadow active overflow-auto">
+                <div class="sidebar-heading sidebar-header text-white text-center">{% block branding %}{% endblock %}</div>
+                {% if request.user.is_authenticated and request.user.is_staff and request.user.is_active %}
+                <div class="list-group list-group-flush">
+                    <a href="{% url 'admin:index' %}" class="bg-primary list-group-item list-group-item-action border-0 sidebar-item">Dashboard</a>
+                    {% custom_get_menu as app_list %}
+                    {% if app_list %}
+                    {% for app in app_list %}
+                    <a class="bg-primary list-group-item list-group-item-action border-0 sidebar-item" data-toggle="collapse" href="#collapse-{{app.app_label}}" role="button" aria-expanded="false" aria-controls="collapse-{{app.app_label}}"><strong>{{app.name}}</strong></a>
+                    <div class="collapse list-group list-group-flush ml-2" id="collapse-{{app.app_label}}">
+                        {% for model in app.models %}
+                        {% if model.admin_url %}
+                        <a href="{{ model.admin_url }}" class="bg-primary list-group-item list-group-item-action border-0 sidebar-item">{{ model.name }}</a>
+                        {% else %}
+                        <a class="bg-primary list-group-item list-group-item-action border-0 sidebar-item text-muted">{{ model.name }}</a>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <span class="list-group-item list-group-item-action sidebar-item text-muted">{% trans 'You don’t have permission to view or edit anything' %}</span>
+                    {% endif %}
+
+                    {% block sidebar %}
+                    {% endblock %}
+                </div>
+                {% endif %}
+            </nav>
+            {% endif %}
+            {% endblock %}
+
+            <div class="content active">
+                {% if request.user.is_authenticated and not is_popup %}
+                <nav class="navbar navbar-expand-lg navbar-light bg-primary shadow">
+                    <div class="container-fluid">
+
+                  <a class="text-white border-0 cursor-pointer" id="menu-toggle"><i class="fas fa-chevron-right"></i></a>
+
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">{% trans 'Index'%}</a>
+                      </li>
+                      <li class="nav-item">
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {% trans 'Account' %}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                          {% if user.has_usable_password %}
+                          <a class="dropdown-item" href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a>
+                          <div class="dropdown-divider"></div>
+                          {% endif %}
+                          <a class="dropdown-item" href="{% url 'admin:logout' %}?next=/{% url 'admin:index' %}">{% trans 'Log out' %}</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                </nav>
+                {% endif %}
+
+                <div id="content" class="{% block bodyclass %}overflow-auto h-100{% endblock %}">
+                    {% block pretitle %}{% endblock %}
+                    <!-- {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %} -->
+                    {% block content %}
+                    {% block object-tools %}{% endblock %}
+                    {{ content }}
+                    {% endblock %}
+                    <br class="clear">
+                </div>
+            </div>
+        </div>
+
+        <!-- Multi purpose modal -->
+        <div class="modal fade" id="baseModal" tabindex="-1" role="dialog" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+              <div class="modal-body" id="baseModalBody">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+        <!-- <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js.map' %}"></script> -->
+
+        {% if not is_popup %}
+        <!-- Menu Toggle Script -->
+        <script>
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip()
+        })
+          $("#dismiss").click(function(){
+              $('#sidebar .content').removeClass('active');
+          })
+          $("#menu-toggle").click(function(e) {
+              $('#sidebar, .content').toggleClass('active')
+            e.preventDefault();
+            $("#menu-toggle").children().toggleClass("fa-chevron-right")
+            $("#menu-toggle").children().toggleClass("fa-chevron-left")
+            // $("#wrapper").toggleClass("toggled");
+            // $("#sidebar-wrapper").toggleClass("overflow-auto-y");
+          });
+        </script>
+        {% endif %}
+        {% block scripts %}
+        {% endblock %}
+    </body>
+</html>
